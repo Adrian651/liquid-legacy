@@ -3,6 +3,8 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import home from './components/home.vue';
 
+import VueFullPage from 'vue-fullpage.js'
+
 Vue.use(VueRouter)
 
 const routes = [
