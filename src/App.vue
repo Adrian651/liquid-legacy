@@ -2,24 +2,17 @@
   <div id="app">
     <!-- <img src="./assets/logo.png">
     <router-view></router-view> -->
-<header>
-         <div class="menu-toggle" id="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="overlay"></div>
-        <div class="container">
-            <nav>
-              <span class ="brand"> <img width="50" src="./assets/logo.png"></span>
-                <!-- <h1 class="brand"><a href="index.html">Br<span>a</span>nd</a></h1> -->
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-</header>
+ <full-page :options="options">
+      <div class="section">
+        Section1
+      </div>
+      <div class="section">
+        Section2
+      </div>
+      <div class="section">
+        Section3
+      </div>
+    </full-page>
   </div>
 </template>
 
