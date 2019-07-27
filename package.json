@@ -7,7 +7,9 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "host": "npm run build && php -S 0.0.0.0:8000",
+    "git_reset": "git reset --hard @{u} && git clean -df && git pull"
   },
   "dependencies": {
     "vue": "^2.5.11",
