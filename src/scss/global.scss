@@ -19,8 +19,7 @@ a{
 }
 
 header{
-	
-	padding-top: 3rem;
+	padding-top: 2rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -28,13 +27,7 @@ header{
 	font-size: 1.6rem;
 	position: absolute;
 	z-index: 1;
-// 	overflow: hidden;
 	width: 100%;
-// 	height: 100vh;
-// 	background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)), url("https://images.unsplash.com/photo-1523374228107-6e44bd2b524e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") center no-repeat;
-// 	background-size: cover;
-// 	position: relative;
-//   overflow: hidden;
 }
 
 .container{
@@ -42,18 +35,42 @@ header{
 	width: 100%;
 	margin: 0 auto;
 }
-
-.menu-toggle{
-	position: fixed;
-	right: 2.5rem;
+#menu-button{
+	position: absolute;
+	right: 0rem;
 	color: #eeeeee;
 	font-size: 3rem;
 	cursor: pointer;
 	z-index: 1000;
 	display: none;
-	transform: translateX(100rem);
-	animation: slideIn .5s forwards;
+	cursor: pointer;
+	margin-right:15px;
+	width: 30px;
+	&:after, 
+	&:before, 
+	span {
+		background-color: #fff;
+		border-radius: 3px;
+		content: '';
+		display: block;
+		height: 3px;
+		margin: 6px 0;
+		transition: all .2s ease-in-out;
+	}
+	&.open{
+		&:before {
+			transform: translateY(6px) rotate(135deg);
+		}	
+		&:after {
+			transform: translateY(-12px) rotate(-135deg);
+		}
+		span {
+			transform: scale(0);
+		}
+	}
 }
+
+
 
 .brand{
 	margin-left: 3%;
@@ -62,22 +79,28 @@ header{
 	font-size: 3rem;
 	font-weight: 300;
 	position: relative;
-	transform: translateX(-100rem);
-	animation: slideIn .5s forwards;
 	color: #fff;
-
 	&.hidden{
 		display: none!important;
 	}
-	span{
+
+	span{	
 		position: absolute;
+		transform: translateX(-100rem);
+		animation: slideIn .5s forwards;
 		&:first-child{
-			right:0px;
+			right:40px;
+			animation-delay: .90s;
 		}
 		&:last-child{
-			left: 43px;
-			// padding-left: -10px;
+			left: 40px;
+			animation-delay: .25s;
 		}
+	}
+	img{
+		transform: translateX(-100rem);
+		animation: slideIn .5s forwards;
+		animation-delay: .5s;
 	}
 }
 
@@ -172,7 +195,7 @@ nav ul li a:hover::after{
 
 @media screen and (max-width: 750px){
 
-	.menu-toggle{
+	#menu-button{
 		display: block;
 	}
 
@@ -199,15 +222,4 @@ nav ul li a:hover::after{
 		margin: 0;
 		font-size: 2.5rem;
 	}
-
-
-  
-  .overlay.menu-open,
-  nav.menu-open{
-	  display: flex;
-	  transform: scale(1);
-		opacity: 1;
-
-  }
-  
 }
