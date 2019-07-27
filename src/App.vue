@@ -1,35 +1,29 @@
 <template>
   <div id="app">
+      <v-app>
     <!-- <img src="./assets/logo.png">
     <router-view></router-view>-->
-    <header>
-        <span class="brand">
-            <img width="50" src="./assets/logo.png" />
-          </span>
-      <div class="menu-toggle" id="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-      <div class="overlay"></div>
-      <div class="container">
-        <nav>
-      
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<header>
+        <div class="menu-toggle" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="overlay"></div>
+
+      <v-overlay :value="overlay">
+      </v-overlay>
+ 
+          <h1 class="brand"><span>L</span><img  width="50" src="./assets/logo.png"/><span>quid</span></h1>
+        <div class="container">
+            <nav>
+                <ul id='nav_items'>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
   <div class="well" id="well">
 	<div class="panel"></div>
 	<div class="panel"><span class="top">&uarr;</span></div>
@@ -37,36 +31,42 @@
 	<div class="panel"><span class="top">&uarr;</span></div>
 	<div class="panel"><span class="top">&uarr;</span></div>
 </div>
+      </v-app>
   </div>
 </template>
 
 <script>
 export default {
   name: "app",
-
+  data: () => ({
+      overlay: false,
+  }),
   mounted() {
-    var open = document.getElementById("hamburger");
-    var changeIcon = true;
+    // var open = document.getElementById('hamburger');
+    // var changeIcon = true;
 
-    open.addEventListener("click", function() {
-      var overlay = document.querySelector(".overlay");
-      var nav = document.querySelector("nav");
-      var icon = document.querySelector(".menu-toggle i");
+    // open.addEventListener("click", function(){
 
-      overlay.classList.toggle("menu-open");
-      nav.classList.toggle("menu-open");
+    //     var overlay = document.querySelector('.overlay');
+    //     var nav = document.querySelector('nav');
+    //     var icon = document.querySelector('.menu-toggle i');
+    //     let brand = document.querySelector('.brand');
 
-      if (changeIcon) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
+    //     overlay.classList.toggle("menu-open");
+    //     nav.classList.toggle("menu-open");
+    //      document.querySelector('.brand').classList.toggle("hidden")
+    //     if (changeIcon) {
+    //         icon.classList.remove("fa-bars");
+    //         icon.classList.add("fa-times");
 
-        changeIcon = false;
-      } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-        changeIcon = true;
-      }
-    });
+    //         changeIcon = false;
+    //     }
+    //     else {
+    //         icon.classList.remove("fa-times");
+    //         icon.classList.add("fa-bars");
+    //         changeIcon = true;
+    //     }
+    // });
     var pnls = document.querySelectorAll(".panel").length,
       scdir,
       hold = false;
@@ -201,12 +201,6 @@ export default {
 </script>
 <style lang="scss">
 @import "./scss/global";
-body {
-  overflow: hidden;
-  margin: 0;
-  font-family: "Limelight", sans-serif;
-  text-rendering: optimizeLegibility;
-}
 
 .well {
   position: relative;
@@ -252,12 +246,4 @@ body {
 .panel:nth-child(5) {
   background: #456789;
 }
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
 </style>

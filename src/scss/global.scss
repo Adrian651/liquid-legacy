@@ -4,9 +4,13 @@
 	box-sizing: border-box;
 }
 
+body,
 html{
 	font-size: 10px;
 	font-family: "Roboto Cn", sans-serif;
+	overflow-y: hidden!important; 
+	overflow: hidden;
+  margin: 0;
 }
 
 a{
@@ -60,19 +64,31 @@ nav{
 .brand{
 	margin-left: 3%;
 	display: flex;
-	justify-content: space-between;
+	// justify-content: space-between;
 	align-items: center;
 	font-size: 3rem;
 	font-weight: 300;
 	position: relative;
 	transform: translateX(-100rem);
 	animation: slideIn .5s forwards;
-	
+	color: #fff;
+
+	&.hidden{
+		display: none!important;
+	}
+	span{
+		&:first-child{
+			
+		}
+		&:last-child{
+			left: 56px;
+			padding-left: -10px;
+			position: absolute;
+		}
+	}
 }
 
-.brand span{
-	color: crimson;
-}
+
 
 nav ul{
 	float: right;
@@ -80,7 +96,7 @@ nav ul{
 }
 
 nav ul li{
-	padding: 1%;
+	// padding: 1%;
 	list-style: none;
 	transform: translateX(100rem);
 	animation: slideIn .5s forwards;
@@ -161,7 +177,7 @@ nav ul li a:hover::after{
 	}
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 750px){
 
 	.menu-toggle{
 		display: block;
@@ -191,9 +207,7 @@ nav ul li a:hover::after{
 		font-size: 2.5rem;
 	}
 
-	.brand{
-		font-size: 5rem;
-	}
+
   
   .overlay.menu-open,
   nav.menu-open{
