@@ -7,17 +7,16 @@
               <div id="menu-button" @click="menu_click">    
                 <span></span>
                 </div>
-              <div class="overlay"></div>
-
+             
             <v-overlay :value="overlay" :opacity="90" :z-index="2">
-<!--               
+              <nav>
               <ul>
                   <li><a href="#">Home</a></li>
                   <li><a href="#">Services</a></li>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Contact</a></li>
               </ul>
-               -->
+              </nav>
             </v-overlay>
             <h1 class="brand"><span>L</span><img  width="50" src="./assets/logo.png"/><span>quid</span></h1>
               <nav>
@@ -212,7 +211,6 @@ export default {
                 scdir = swdir;
                 _scrollY(obj);
               }
-            
               e.stopPropagation();
             }
           }
@@ -275,22 +273,22 @@ export default {
 }
 
 .panel:nth-child(1) {
-  background: #012345;
+  background: grey;
 }
 
 .panel:nth-child(2) {
-  background: #123456;
+  background: lightgrey;
 }
 
 .panel:nth-child(3) {
-  background: #234567;
+  background: whitesmoke;
 }
 
 .panel:nth-child(4) {
-  background: #345678;
+  background: darkgrey;
 }
 
 .panel:nth-child(5) {
-  background: #456789;
+  background: grey;
 }
 </style>
