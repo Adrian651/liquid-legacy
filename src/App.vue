@@ -11,9 +11,8 @@
 
       <v-overlay :value="overlay">
       </v-overlay>
- 
           <h1 class="brand"><span>L</span><img  width="50" src="./assets/logo.png"/><span>quid</span></h1>
-        <div class="container">
+        <!-- <div class="container"> -->
             <nav>
                 <ul id='nav_items'>
                     <li><a href="#">Home</a></li>
@@ -22,14 +21,17 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-        </div>
+        <!-- </div> -->
 </header>
+  <div>
+    
+  </div>
   <div class="well" id="well">
-	<div class="panel"></div>
-	<div class="panel"><span class="top">&uarr;</span></div>
-	<div class="panel"><span class="top">&uarr;</span></div>
-	<div class="panel"><span class="top">&uarr;</span></div>
-	<div class="panel"><span class="top">&uarr;</span></div>
+    <div class="panel"></div>
+    <div class="panel"><span class="top">&uarr;</span></div>
+    <div class="panel"><span class="top">&uarr;</span></div>
+    <div class="panel"><span class="top">&uarr;</span></div>
+    <div class="panel"><span class="top">&uarr;</span></div>
 </div>
       </v-app>
   </div>
@@ -97,19 +99,20 @@ export default {
       if (hold === false) {
         hold = true;        
         pan.style.transform = "translateY(" + slength + "vh)"; 
-          if(window.innerWidth < 700){ // if desktop 
-            if(slength === 0){// if mobile
-              
-            }     
-          }  
+        if(window.innerWidth < 700){ // if desktop 
+          if(slength === 0){// if mobile
+            
+          }     
+        }  
         setTimeout(function() {
-          hold = false;       
-        }, 1000);
-       
+          hold = false;   
+        }, 1500);
+
       }
     }
     /*[swipe detection on touchscreen devices]*/
     function _swipe(obj) {
+ 
       var swdir,
         sX,
         sY,
@@ -131,7 +134,7 @@ export default {
           sX = tchs.pageX;
           sY = tchs.pageY;
           stT = new Date().getTime();
-          //e.preventDefault();
+          e.preventDefault();
         },
         false
       );
@@ -168,6 +171,7 @@ export default {
                 scdir = swdir;
                 _scrollY(obj);
               }
+            
               e.stopPropagation();
             }
           }
@@ -179,6 +183,7 @@ export default {
     var well = document.getElementById("well");
     well.style.transform = "translateY(0)";
     well.addEventListener("wheel", function(e) {
+      
       if (e.deltaY < 0) {
         scdir = "down";
       }
@@ -188,6 +193,7 @@ export default {
       e.stopPropagation();
     });
     well.addEventListener("wheel", _scrollY);
+
     _swipe(well);
     var tops = document.querySelectorAll(".top");
     for (var i = 0; i < tops.length; i++) {

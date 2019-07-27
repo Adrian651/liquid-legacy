@@ -45,8 +45,6 @@ header{
 
 .menu-toggle{
 	position: fixed;
-	top: 5rem;
-	// float: bo
 	right: 2.5rem;
 	color: #eeeeee;
 	font-size: 3rem;
@@ -57,14 +55,9 @@ header{
 	animation: slideIn .5s forwards;
 }
 
-nav{
-
-}
-
 .brand{
 	margin-left: 3%;
 	display: flex;
-	// justify-content: space-between;
 	align-items: center;
 	font-size: 3rem;
 	font-weight: 300;
@@ -77,13 +70,13 @@ nav{
 		display: none!important;
 	}
 	span{
+		position: absolute;
 		&:first-child{
-			
+			right:0px;
 		}
 		&:last-child{
-			left: 56px;
-			padding-left: -10px;
-			position: absolute;
+			left: 43px;
+			// padding-left: -10px;
 		}
 	}
 }
