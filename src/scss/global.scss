@@ -32,7 +32,8 @@ header {
   font-size: 1.6rem;
   position: absolute;
   z-index: 1;
-  width: 100%;
+	width: 100%;
+	
 }
 .v-overlay__content{
 	nav{
@@ -48,19 +49,19 @@ header {
 			li{
 				list-style: none;
 				transform: translateX(100rem);
-				animation: slideIn .5s forwards;
+				animation: slideIn .2s forwards;
 
 				&:nth-child(1){
 					animation-delay: 0s;
 				}
 				&:nth-child(2){
-					animation-delay: .5s;
+					animation-delay: .1s;
 				}
 				&:nth-child(3){
-					animation-delay: 1s;
+					animation-delay: .2s;
 				}
 				&:nth-child(4){
-					animation-delay: 1.5s;
+					animation-delay: .3s;
 				}	
 				a{
 					padding: 1rem 0;
@@ -100,7 +101,8 @@ header {
   align-items: center;
   font-size: 3rem;
   font-weight: 300;
-  position: relative;
+	position: relative;
+	cursor: pointer!important;
   color: #fff;
 
   &.hidden {
@@ -112,21 +114,28 @@ header {
     transform: translateX(-100rem);
     animation: slideIn .5s forwards;
 
-    &:first-child {
-      right: 40px;
+    &:nth-child(1) {
+      left: -10px;
       animation-delay: .90s;
-    }
+		}
+		&:nth-child(2) {
+			animation-delay: .5s;
+		}
 
-    &:last-child {
+    &:nth-child(3) {
       left: 40px;
       animation-delay: .25s;
     }
   }
   img {
-    transform: translateX(-100rem);
-    animation: slideIn .5s forwards;
-    animation-delay: .5s;
-  }
+		-webkit-transition: -webkit-transform .8s ease-in-out;
+		transition:         transform .8s ease-in-out;
+	}
+	img:hover {
+		-webkit-transform: rotate(360deg);
+						transform: rotate(360deg);
+	}
+	
 }
 #menu-button {
   position: absolute;

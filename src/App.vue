@@ -18,7 +18,7 @@
               </ul>
               </nav>
             </v-overlay>
-            <h1 class="brand"><span>L</span><img  width="50" src="./assets/logo.png"/><span>quid</span></h1>
+            <h1 class="brand"><span>L</span><span><img  width="50" src="./assets/logo.png"/></span><span>quid</span></h1>
               <nav>
                   <ul id='nav_items'>
                       <li><a href="#">Home</a></li>
