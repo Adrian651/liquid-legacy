@@ -300,7 +300,7 @@ header {
     padding-bottom: 40px;
 
     .trans {
-      background: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5));
+      background: linear-graydient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5));
       padding-bottom: 40px;
       -webkit-transition: all 2s; /* Safari prior 6.1 */
       transition: all 2s;
@@ -309,6 +309,7 @@ header {
 }
 
 header {
+  background: black!important;
   video {
     position: absolute;
     top: 50%;
@@ -322,19 +323,18 @@ header {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-  }
-  .visible {
     visibility: visible;
     opacity: 1;
-    transition: opacity 2s linear;
-    
+    transition: opacity .5s linear;
   }
+
 
   .hidden {
     visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+    opacity: 0!important;
+    transition: visibility 0s .5s, opacity .5s linear;
   }
+
 
   .container {
     position: relative;
@@ -347,7 +347,7 @@ header {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: black!important;
     opacity: 0.5;
     z-index: 1;
   }
