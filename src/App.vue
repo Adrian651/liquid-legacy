@@ -3,7 +3,18 @@
       <v-app>
     <!-- <img src="./assets/logo.png">
     <router-view></router-view>-->
-      <header>
+      <!-- <header>
+       
+
+      </header>
+	      <section class="test"></section> -->
+        <header>
+       
+          <div class="overlay"></div>
+          <video  id="video_header" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source  src="https://res.cloudinary.com/adrian651/video/upload/v1568254399/header_kwkiqm.mp4" type="video/mp4">
+          </video>
+             <div class ="navigation">
               <div id="menu-button" @click="menu_click">    
                 <span></span>
                 </div>
@@ -27,24 +38,23 @@
                       <li><a href="#">Contact</a></li>
                   </ul>
               </nav>
-      </header>
-  <div>
-    
-  </div>
-  <div style ></div>
-   <v-parallax
-      dark
-      src="https://i.pinimg.com/originals/76/38/9f/76389f6ef17efc39df659073843881a7.gif"
-    >
- 
-    </v-parallax>
-  <!-- <div class="well" id="well">
-    <div class="panel"></div>
-    <div class="panel"><span class="top">&uarr;</span></div>
-    <div class="panel"><span class="top">&uarr;</span></div>
-    <div class="panel"><span class="top">&uarr;</span></div>
-    <div class="panel"><span class="top">&uarr;</span></div>
-</div> -->
+      </div>
+        </header>
+
+        <section class="my-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
+                <p>The overlay color can be changed by changing the <code>background-color</code> of the <code>.overlay</code> class in the CSS.</p>
+                <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the media query at the bottom of the CSS snippet.</p>
+                <p class="mb-0">
+                  Created by <a href="https://startbootstrap.com">Start Bootstrap</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </v-app>
   </div>
 </template>
@@ -54,6 +64,10 @@ export default {
   name: "app",
   data: () => ({
       overlay: false,
+          inMove: false,
+    activeSection: 0,
+    offsets: [],
+    touchStartY: 0
   }),
   methods:{
 
@@ -61,9 +75,12 @@ export default {
       console.log('clicked')
       document.getElementById('menu-button').classList.toggle('open');
       this.overlay = !this.overlay;
-
+    },
+    loop_video () {
+      var video = document.getElementById('video1');
+      video.classList.toggle('anim-fade-out');
     }
-    // var open = document.getElementById('hamburger');
+  // var open = document.getElementById('hamburger');
     // var changeIcon = true;
 
     // open.addEventListener("click", function(){
@@ -90,7 +107,28 @@ export default {
     // });
 
   },
-  mounted() {
+  mounted() {    
+    
+    var video = document.getElementById('video_header')
+    setTimeout(() => {
+          console.log(video.duration)
+    }, 10);
+
+    // setInterval( () =>{
+      
+    //   var promise_this = new Promise( (resolve, reject) =>{
+    //     setTimeout(() => {
+    //       console.log('in set timepou')
+    //       resolve()
+    //       video.classList.toggle('visible');
+    //     }, 1000);
+    //   }).then (()=>{
+    //     video.classList.toggle('hidden');
+    //       console.log('in then')
+    //   });
+    // }, video.duration);
+    // this.loop_video();
+
     // var open = document.getElementById('hamburger');
     // var changeIcon = true;
 
@@ -122,48 +160,4 @@ export default {
 <style lang="scss">
 @import "./scss/global";
 
-.well {
-  position: relative;
-  overflow: hidden;
-  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
-}
-
-.top {
-  font-size: 80%;
-  color: hsla(0, 0%, 100%, 0.25);
-  position: relative;
-  top: -0.2em;
-  cursor: pointer;
-}
-
-.panel {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  font-size: 10vmin;
-  padding: 1em;
-  box-sizing: border-box;
-  color: hsla(0, 0%, 100%, 0.1);
-  cursor: default;
-}
-
-.panel:nth-child(1) {
-  background: grey;
-}
-
-.panel:nth-child(2) {
-  background: lightgrey;
-}
-
-.panel:nth-child(3) {
-  background: whitesmoke;
-}
-
-.panel:nth-child(4) {
-  background: darkgrey;
-}
-
-.panel:nth-child(5) {
-  background: grey;
-}
 </style>

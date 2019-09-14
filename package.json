@@ -7,11 +7,13 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && firebase deploy",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "deploy": "firebase deploy",
     "host": "npm run build && php -S 0.0.0.0:8000",
     "git_reset": "git reset --hard @{u} && git clean -df && git pull"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "vue": "^2.5.11",
     "vue-router": "^3.0.7",
     "vuetify": "^2.0.11"
