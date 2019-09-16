@@ -18,7 +18,7 @@
           loop="loop"
         >
           <source
-            src="https://scontent.cdninstagram.com/v/t50.2886-16/55973510_2406850089327441_2156221432546197504_n.mp4?_nc_ht=scontent.cdninstagram.com&_nc_cat=109&oe=5D7FF7B6&oh=3e111f7ecf77e0ddb036fd17d6088f00"
+            src="https://firebasestorage.googleapis.com/v0/b/liquid-legacy.appspot.com/o/header.mp4?alt=media&token=a83cb858-a2e6-49e3-9128-235b2f2ce506"
             type="video/mp4"
           />
         </video>
@@ -45,6 +45,7 @@
               </ul>
             </nav>
           </v-overlay>
+
           <h1 class="brand">
             <span>L</span>
             <span>
@@ -66,30 +67,17 @@
               <li>
                 <a href="#">Contact</a>
               </li>
+              <li>
+              <button type="button" onclick="alert('Hello world!')">
+                Get Started
+              </button>
+              </li>
             </ul>
           </nav>
         </div>
+        
+        <span>test</span>
       </header>
-
-      <section class="my-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 mx-auto">
-              <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own background! The header text is vertically centered using flex utilities that are build into Bootstrap 4.</p>
-              <p>
-                The overlay color can be changed by changing the
-                <code>background-color</code> of the
-                <code>.overlay</code> class in the CSS.
-              </p>
-              <p>Set the mobile fallback image in the CSS by changing the background image of the header element within the media query at the bottom of the CSS snippet.</p>
-              <p class="mb-0">
-                Created by
-                <a href="https://startbootstrap.com">Start Bootstrap</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </v-app>
   </div>
 </template>
